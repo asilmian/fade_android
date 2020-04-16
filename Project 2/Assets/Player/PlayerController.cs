@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Speed of the player
-    private float speed = 7.5f;
+    private float speed = 6f;
     private float ground = 0.85f;
 
     // Player is a rigid body
@@ -60,24 +60,34 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            // Ball rolls with movement
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-
 
             // make sure player moves on the ground
             if (this.transform.position.y <= ground)
             {
-               
-              
-                Vector3 targetDirection = new Vector3(moveHorizontal, 0f, moveVertical);
+
+
+                Vector3 targetDirection = Input.acceleration;
+                targetDirection.y = 0f;
+                targetDirection.z = targetDirection.z + 0.5f;
+                if (-0.1 <= targetDirection.z && targetDirection.z <= 0)
+                {
+                    targetDirection.z = 0f;
+                }
+                if (targetDirection.z > 0.5f)
+                    targetDirection.z = 0.5f;
+
+
+
+                targetDirection.z = (targetDirection.z * -1);
+
+
+                Debug.Log(targetDirection.ToString());
 
                 //sets movement vectors relative to the camera
                 targetDirection = Camera.main.transform.TransformDirection(targetDirection);
-                targetDirection.y = 0.0f;
                 movement = targetDirection;
 
-                body.AddForce(movement * speed);
+                body.AddForce(targetDirection * speed);
 
             }
         }

@@ -14,7 +14,7 @@ public class PointLight : MonoBehaviour
 {
     public Color color;
     public Light lt;
-    public float lightfadespeed = 0.04f;
+    public float lightfadespeed = 0.02f;
     public float max_intensity = 2.5f;
 
     private bool canFade = false;

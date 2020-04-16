@@ -30,7 +30,7 @@ Material:
     m_Floats:
     - _DissolveSize: 1
     - _DissolveY: 50
-    - _Intensity: 1.3303941
+    - _Intensity: 1
     - _Range: 2
     - _StartY: -3
     - _StartingY: -3
