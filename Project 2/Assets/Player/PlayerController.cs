@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Speed of the player
-    private float speed = 6f;
+    private float speed = 8f;
     private float ground = 0.85f;
 
     // Player is a rigid body
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Open");
+                SceneManager.LoadScene("Opening");
             }
         }
 
