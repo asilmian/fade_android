@@ -29,8 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DissolveSize: 1
-    - _DissolveY: 50
-    - _Intensity: 1
+    - _DissolveY: 3.1035678
+    - _Intensity: 0.5
     - _Range: 2
     - _StartY: -3
     - _StartingY: -3
